@@ -1,0 +1,56 @@
+:root{
+  --accent:#0d6efd;
+}
+body{background:#f8f9fa}
+.brand .h4{font-family:Helvetica, Arial, sans-serif}
+
+/* Make header buttons visually match heights */
+.header-btn-equal{display:inline-flex;align-items:center;padding:.375rem .75rem;height:38px;box-sizing:border-box}
+.header-btn-equal i{line-height:1}
+@media (max-width:480px){
+  .header-btn-equal{height:auto}
+}
+
+
+.posts .post-img{width:100%; display:block; object-fit:cover; object-position:center}
+
+/* Grid layout with equal horizontal and vertical gaps */
+.posts.grid-view{display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem}
+.grid-view .post-item{padding:0}
+.grid-view .post-item img{width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center; display:block}
+
+/* responsive grid columns */
+@media (max-width:768px){
+  .posts.grid-view{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:480px){
+  .posts.grid-view{grid-template-columns:repeat(1,1fr)}
+}
+
+
+.single-view .post-item{width:100%}
+.single-card{border:1px solid #e9ecef; border-radius:6px; overflow:hidden; background:#fff}
+.single-card .banner{padding:10px 12px; display:flex; justify-content:space-between; align-items:center}
+.single-card .banner .date{font-size:0.85rem; color:#6c757d}
+.single-card .footer{padding:10px 12px}
+.single-card .likes{font-weight:700}
+
+.modal-overlay{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); z-index:1050}
+.modal-overlay .modal-card{background:#fff; padding:18px; width:min(720px,95%); border-radius:8px}
+.modal-overlay.d-none{display:none}
+
+#secondaryHeader.hide{transform:translateY(-100%); transition:transform .25s ease}
+#secondaryHeader{transition:transform .25s ease}
+
+/* dropdown should appear above the secondary header */
+.dropdown .dropdown-menu{z-index:3000}
+
+
+/* Single view sizing: center and limit to 8 columns on md+ (approx 66.666%). Full width on small screens. */
+.single-view .single-card{width:100%; margin:0 auto}
+@media (min-width:768px){
+  .single-view .single-card{max-width:66.6666%}
+}
+@media (max-width:576px){
+  .single-view .single-card{max-width:100%}
+}
